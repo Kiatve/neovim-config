@@ -17,6 +17,21 @@ return {
 	{ "brenoprata10/nvim-highlight-colors" },
 
 	{
+		"hasansujon786/nvim-navbuddy",
+		dependencies = {
+			"neovim/nvim-lspconfig",
+			"SmiteshP/nvim-navic",
+			"MunifTanjim/nui.nvim",
+			"numToStr/Comment.nvim",
+			"nvim-telescope/telescope.nvim"
+		},
+		config = function()
+			require("nvim-navbuddy").setup()
+			vim.keymap.set("n", "<leader>", require("nvim-navbuddy").open)
+		end
+	},
+
+	{
 		"rachartier/tiny-code-action.nvim",
 		event = "LspAttach",
 		dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
